@@ -24,7 +24,7 @@ class mEnOceanF_EEP_A53808_7 extends IPSModule{
         "DataByte3":7,
         "DataByte2":0,
         "DataByte1":0,
-        "DataByte0":0
+        "DataByte0":0,
         }');
 
         //Connect to available enocean gateway
@@ -146,7 +146,7 @@ class mEnOceanF_EEP_A53808_7 extends IPSModule{
         $data->DataLength = 4; // Länge 7Byte
         $data->DataByte0 = 165;
         $data->DataByte1 = 56;
-        $data->DataByte2 = 8;
+        $data->DataByte2 = 80;
         $data->DataByte3 = 0;
         $data->DataByte4 = 2d;
         $data->DataByte5 = 255;
