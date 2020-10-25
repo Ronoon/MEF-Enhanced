@@ -24,7 +24,7 @@ class mEnOceanF_EEP_A53808_7 extends IPSModule{
         "DataByte3":80,
         "DataByte2":0,
         "DataByte1":0,
-        "DataByte0":0,
+        "DataByte0":0
         }');
 
         //Connect to available enocean gateway
@@ -132,6 +132,9 @@ class mEnOceanF_EEP_A53808_7 extends IPSModule{
         $data->DataByte1 = 71; // 56=38
         $data->DataByte2 = 255; // 8=8
         $data->DataByte3 = 128; // 3Bit MSB Manufacturer ID
+        $data->DataByte4 = 00;
+        $data->DataByte5 = 00;
+        $data->DataByte6 = 00;
         $data->DestinationID = (int)hexdec($this->ReadPropertyString("ReturnID"));
         $this->SendData(json_encode($data));
     }
@@ -145,6 +148,9 @@ class mEnOceanF_EEP_A53808_7 extends IPSModule{
         $data->DataByte1 = 71;
         $data->DataByte2 = 255;
         $data->DataByte3 = 128;
+        $data->DataByte4 = 00;
+        $data->DataByte5 = 00;
+        $data->DataByte6 = 00;
         $data->DestinationID = (int)hexdec($this->ReadPropertyString("ReturnID"));
         $this->SendData(json_encode($data));
     }
