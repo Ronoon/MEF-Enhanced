@@ -126,12 +126,12 @@ class mEnOceanF_EEP_A53808_7 extends IPSModule{
     public function TeachIn()
     {
         $data = json_decode($this->ReadPropertyString("BaseData"));
-        $data->Device = 212, //Telegram Type Universal Teach In
-        $data->DataLength = 7; // Länge 7Byte
-        $data->DataByte0 = 165; //165=A5
-        $data->DataByte1 = 56; // 56=38
+        $data->Device = 165, //Telegram Type Universal Teach In
+        $data->DataLength = 4; // Länge 7Byte
+        $data->DataByte0 = 128; //165=A5
+        $data->DataByte1 = 45; // 56=38
         $data->DataByte2 = 8; // 8=8
-        $data->DataByte3 = 0; // 3Bit MSB Manufacturer ID
+        $data->DataByte3 = 19; // 3Bit MSB Manufacturer ID
         $data->DataByte4 = 2d; // Afriso= 2d LSB Manufacturer ID 46 wäre NodOn bzw. ID RF !!!!
         $data->DataByte5 = 255; // Number of indiv.Channels to be taught in
         $data->DataByte6 = 160; // 1 Bidirectional 0 Teach in response expected 1 Teach-In or deletion of Teach-in, 0 -0 0 0 0- 
