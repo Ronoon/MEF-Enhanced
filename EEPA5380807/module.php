@@ -21,7 +21,7 @@ class mEnOceanF_EEP_A53808_7 extends IPSModule{
         "DataByte6":0,
         "DataByte5":0,
         "DataByte4":0,
-        "DataByte3":7,
+        "DataByte3":80,
         "DataByte2":0,
         "DataByte1":0,
         "DataByte0":0,
@@ -132,9 +132,6 @@ class mEnOceanF_EEP_A53808_7 extends IPSModule{
         $data->DataByte1 = 47; // 56=38
         $data->DataByte2 = ff; // 8=8
         $data->DataByte3 = 80; // 3Bit MSB Manufacturer ID
-        $data->DataByte4 = 00; // Afriso= 2d LSB Manufacturer ID 46 wäre NodOn bzw. ID RF !!!!
-        $data->DataByte5 = 00; // Number of indiv.Channels to be taught in
-        $data->DataByte6 = 00; // 1 Bidirectional 0 Teach in response expected 1 Teach-In or deletion of Teach-in, 0 -0 0 0 0- 
         $data->DestinationID = (int)hexdec($this->ReadPropertyString("ReturnID"));
         $this->SendData(json_encode($data));
     }
@@ -148,9 +145,6 @@ class mEnOceanF_EEP_A53808_7 extends IPSModule{
         $data->DataByte1 = 56;
         $data->DataByte2 = 80;
         $data->DataByte3 = 0;
-        $data->DataByte4 = 2d;
-        $data->DataByte5 = 255;
-        $data->DataByte6 = 176;
         $data->DestinationID = (int)hexdec($this->ReadPropertyString("ReturnID"));
         $this->SendData(json_encode($data));
     }
