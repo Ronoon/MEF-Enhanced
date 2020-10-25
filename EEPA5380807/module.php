@@ -128,13 +128,13 @@ class mEnOceanF_EEP_A53808_7 extends IPSModule{
         $data = json_decode($this->ReadPropertyString("BaseData"));
         $data->Device = 165, //Telegram Type Universal Teach In
         $data->DataLength = 4; // Länge 7Byte
-        $data->DataByte0 = 128; //165=A5
-        $data->DataByte1 = 45; // 56=38
-        $data->DataByte2 = 8; // 8=8
-        $data->DataByte3 = 19; // 3Bit MSB Manufacturer ID
-        $data->DataByte4 = 2d; // Afriso= 2d LSB Manufacturer ID 46 wäre NodOn bzw. ID RF !!!!
-        $data->DataByte5 = 255; // Number of indiv.Channels to be taught in
-        $data->DataByte6 = 160; // 1 Bidirectional 0 Teach in response expected 1 Teach-In or deletion of Teach-in, 0 -0 0 0 0- 
+        $data->DataByte0 = e0; //165=A5
+        $data->DataByte1 = 47; // 56=38
+        $data->DataByte2 = ff; // 8=8
+        $data->DataByte3 = 80; // 3Bit MSB Manufacturer ID
+        $data->DataByte4 = 00; // Afriso= 2d LSB Manufacturer ID 46 wäre NodOn bzw. ID RF !!!!
+        $data->DataByte5 = 00; // Number of indiv.Channels to be taught in
+        $data->DataByte6 = 00; // 1 Bidirectional 0 Teach in response expected 1 Teach-In or deletion of Teach-in, 0 -0 0 0 0- 
         $data->DestinationID = (int)hexdec($this->ReadPropertyString("ReturnID"));
         $this->SendData(json_encode($data));
     }
