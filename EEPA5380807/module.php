@@ -128,10 +128,10 @@ class mEnOceanF_EEP_A53808_7 extends IPSModule{
         $data = json_decode($this->ReadPropertyString("BaseData"));
         $data->Device = 165; //Telegram Type Universal Teach In
         $data->DataLength = 4; // Länge 7Byte
-        $data->DataByte0 = e0; //165=A5
-        $data->DataByte1 = 47; // 56=38
-        $data->DataByte2 = ff; // 8=8
-        $data->DataByte3 = 80; // 3Bit MSB Manufacturer ID
+        $data->DataByte0 = 224; //165=A5
+        $data->DataByte1 = 71; // 56=38
+        $data->DataByte2 = 255; // 8=8
+        $data->DataByte3 = 128; // 3Bit MSB Manufacturer ID
         $data->DestinationID = (int)hexdec($this->ReadPropertyString("ReturnID"));
         $this->SendData(json_encode($data));
     }
@@ -139,12 +139,12 @@ class mEnOceanF_EEP_A53808_7 extends IPSModule{
     public function TeachOut()
     { 
         $data = json_decode($this->ReadPropertyString("BaseData"));
-        $data->Device = 212; //Telegram Type Universal Teach In
+        $data->Device = 165; //Telegram Type Universal Teach In
         $data->DataLength = 4; // Länge 7Byte
-        $data->DataByte0 = 165;
-        $data->DataByte1 = 56;
-        $data->DataByte2 = 80;
-        $data->DataByte3 = 0;
+        $data->DataByte0 = 224;
+        $data->DataByte1 = 71;
+        $data->DataByte2 = 255;
+        $data->DataByte3 = 128;
         $data->DestinationID = (int)hexdec($this->ReadPropertyString("ReturnID"));
         $this->SendData(json_encode($data));
     }
