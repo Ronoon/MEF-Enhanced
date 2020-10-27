@@ -82,40 +82,40 @@ class mEnOceanF_EEP_A53808_7 extends IPSModule{
         if($position <0)$position = 0;
         if($position >100)$position = 100;
         $data = json_decode($this->ReadPropertyString("BaseData"));
-        $data->DataByte0 = 07;
+        $data->DataByte0 = 48;
         $data->DataByte1 = $position;
         $data->DataByte2 = 00;
-        $data->DataByte3 = 48;
+        $data->DataByte3 = 07;
         $data->DestinationID = (int)hexdec($this->ReadPropertyString("ReturnID"));
         $this->SendData(json_encode($data));
     }
 
     public function ShutterStop(){
         $data = json_decode($this->ReadPropertyString("BaseData"));
-        $data->DataByte0 = 07; 
+        $data->DataByte0 = 24; 
         $data->DataByte1 = 00; 
         $data->DataByte2 = 00; 
-        $data->DataByte3 = 24; 
+        $data->DataByte3 = 07; 
         $data->DestinationID = (int)hexdec($this->ReadPropertyString("ReturnID"));
         $this->SendData(json_encode($data));
     }
 
     public function ShutterMoveDown(){
         $data = json_decode($this->ReadPropertyString("BaseData"));
-        $data->DataByte0 = 07; 
+        $data->DataByte0 = 56; 
         $data->DataByte1 = 00; 
         $data->DataByte2 = 00; 
-        $data->DataByte3 = 56; 
+        $data->DataByte3 = 07; 
         $data->DestinationID = (int)hexdec($this->ReadPropertyString("ReturnID"));
         $this->SendData(json_encode($data));
     }
 
     public function ShutterMoveUp(){
         $data = json_decode($this->ReadPropertyString("BaseData"));
-        $data->DataByte0 = 07; 
+        $data->DataByte0 = 40; 
         $data->DataByte1 = 00; 
         $data->DataByte2 = 00; 
-        $data->DataByte3 = 40; 
+        $data->DataByte3 = 07; 
         $data->DestinationID = (int)hexdec($this->ReadPropertyString("ReturnID"));
         $this->SendData(json_encode($data));
     }
@@ -143,13 +143,12 @@ class mEnOceanF_EEP_A53808_7 extends IPSModule{
     public function TeachIn()
     {
         $data = json_decode($this->ReadPropertyString("BaseData"));
-        $data->Device = 165; //Telegram Type Universal Teach In
-        $data->DataLength = 4; // Länge 7Byte
-        $data->DataByte0 = 224; //165=A5
-        $data->DataByte1 = 71; // 56=38
-        $data->DataByte2 = 255; // 8=8
-        $data->DataByte3 = 128; // 3Bit MSB Manufacturer ID
-        $data->DataByte4 = 00;
+        $data->Device = 165; // 
+        $data->DataLength = 4; //  
+        $data->DataByte0 = 128; // 
+        $data->DataByte1 = 255; //  
+        $data->DataByte2 = 71; //  
+        $data->DataByte3 = 224; //  
         $data->DataByte5 = 00;
         $data->DataByte6 = 00;
         $data->DestinationID = (int)hexdec($this->ReadPropertyString("ReturnID"));
