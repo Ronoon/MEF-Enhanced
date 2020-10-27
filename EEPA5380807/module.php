@@ -84,6 +84,8 @@ class mEnOceanF_EEP_A53808_7 extends IPSModule{
         $data = json_decode($this->ReadPropertyString("BaseData"));
         $data->DataByte0 = 07;
         $data->DataByte1 = $position;
+        $data->DataByte2 = 00;
+        $data->DataByte3 = 48;
         $data->DestinationID = (int)hexdec($this->ReadPropertyString("ReturnID"));
         $this->SendData(json_encode($data));
     }
@@ -99,11 +101,23 @@ class mEnOceanF_EEP_A53808_7 extends IPSModule{
     }
 
     public function ShutterMoveDown(){
-        $this->ShutterMoveTo(100);
+        $data = json_decode($this->ReadPropertyString("BaseData"));
+        $data->DataByte0 = 07; 
+        $data->DataByte1 = 00; 
+        $data->DataByte2 = 00; 
+        $data->DataByte3 = 56; 
+        $data->DestinationID = (int)hexdec($this->ReadPropertyString("ReturnID"));
+        $this->SendData(json_encode($data));
     }
 
     public function ShutterMoveUp(){
-        $this->ShutterMoveTo(0);
+        $data = json_decode($this->ReadPropertyString("BaseData"));
+        $data->DataByte0 = 07; 
+        $data->DataByte1 = 00; 
+        $data->DataByte2 = 00; 
+        $data->DataByte3 = 40; 
+        $data->DestinationID = (int)hexdec($this->ReadPropertyString("ReturnID"));
+        $this->SendData(json_encode($data));
     }
 
     public function UpdatePosition(){
