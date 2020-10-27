@@ -5,7 +5,7 @@
 	"vendor": "More Enocean Features",
 	"aliases": 
 	[
-		"EEP A5-38-08-7",
+		"EEP A5-38-08-71",
 		"A5-38-08 Blinds"
 	],
 	"parentRequirements": ["{70E3075F-A35D-4DEB-AC20-C929A156FE48}"],

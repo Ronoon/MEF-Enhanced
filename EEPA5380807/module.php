@@ -21,7 +21,7 @@ class mEnOceanF_EEP_A53808_7 extends IPSModule{
         "DataByte6":0,
         "DataByte5":0,
         "DataByte4":0,
-        "DataByte3":80,
+        "DataByte3":0,
         "DataByte2":0,
         "DataByte1":0,
         "DataByte0":0

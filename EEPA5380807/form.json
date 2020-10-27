@@ -9,6 +9,7 @@
 		{ "type": "Label", "caption": "2. press TEACHIN/TEACHOUT after activating the learnmode on your device" },
         { "type": "Button", "label": "teachin", "onClick": "MEF_TeachIn($id);" },
         { "type": "Button", "label": "teachout", "onClick": "MEF_TeachOut($id);" },
+        { "type": "Label", "caption": "__________________________________________________________________________" },
 		{ "type": "Label", "caption": "__________________________________________________________________________" },
 		{ "type": "Label", "caption": "" },
         { "type": "Button", "label": "open", "onClick": "MEF_ShutterMoveUp($id);" },
