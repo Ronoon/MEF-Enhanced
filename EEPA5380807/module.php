@@ -161,10 +161,10 @@ class mEnOceanF_EEP_A53808_7 extends IPSModule{
         $data = json_decode($this->ReadPropertyString("BaseData"));
         $data->Device = 165; //Telegram Type Universal Teach In
         $data->DataLength = 4; // Länge 7Byte
-        $data->DataByte0 = 224;
-        $data->DataByte1 = 71;
-        $data->DataByte2 = 255;
-        $data->DataByte3 = 128;
+        $data->DataByte0 = 128;
+        $data->DataByte1 = 255;
+        $data->DataByte2 = 71;
+        $data->DataByte3 = 224;
         $data->DataByte4 = 00;
         $data->DataByte5 = 00;
         $data->DataByte6 = 00;
