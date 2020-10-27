@@ -83,8 +83,8 @@ class mEnOceanF_EEP_A53808_7 extends IPSModule{
         if($position >100)$position = 100;
         $data = json_decode($this->ReadPropertyString("BaseData"));
         $data->DataByte0 = 48;
-        $data->DataByte1 = $position;
-        $data->DataByte2 = 00;
+        $data->DataByte1 = 00;
+        $data->DataByte2 = $position;
         $data->DataByte3 = 07;
         $data->DestinationID = (int)hexdec($this->ReadPropertyString("ReturnID"));
         $this->SendData(json_encode($data));
