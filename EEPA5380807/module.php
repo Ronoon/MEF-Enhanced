@@ -82,15 +82,18 @@ class mEnOceanF_EEP_A53808_7 extends IPSModule{
         if($position <0)$position = 0;
         if($position >100)$position = 100;
         $data = json_decode($this->ReadPropertyString("BaseData"));
-        $data->DataByte0 = 72;
-        $data->DataByte2 = $position;
+        $data->DataByte0 = 07;
+        $data->DataByte1 = $position;
         $data->DestinationID = (int)hexdec($this->ReadPropertyString("ReturnID"));
         $this->SendData(json_encode($data));
     }
 
     public function ShutterStop(){
         $data = json_decode($this->ReadPropertyString("BaseData"));
-        $data->DataByte0 = 24; 
+        $data->DataByte0 = 07; 
+        $data->DataByte1 = 00; 
+        $data->DataByte2 = 00; 
+        $data->DataByte3 = 24; 
         $data->DestinationID = (int)hexdec($this->ReadPropertyString("ReturnID"));
         $this->SendData(json_encode($data));
     }
