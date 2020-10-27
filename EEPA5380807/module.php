@@ -134,7 +134,7 @@ class mEnOceanF_EEP_A53808_7 extends IPSModule{
         if($secondsDown >255)$secondsDown = 255;
         $data = json_decode($this->ReadPropertyString("BaseData"));
         $data->DataByte0 = 120;
-        $data->DataByte1 = $secondsUp;
+        $data->DataByte1 = $secondsUp; //Test
         $data->DataByte2 = $secondsDown;
         $data->DestinationID = (int)hexdec($this->ReadPropertyString("ReturnID"));
         $this->SendData(json_encode($data));
