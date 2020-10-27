@@ -102,8 +102,6 @@ class mEnOceanF_EEP_A53808_7 extends IPSModule{
 
     public function ShutterMoveDown(){
         $data = json_decode($this->ReadPropertyString("BaseData"));
-        $data->Device = 165; //Telegram Type Universal Teach In
-        $data->DataLength = 4; // Länge 7Byte
         $data->DataByte0 = 07; 
         $data->DataByte1 = 00; 
         $data->DataByte2 = 00; 
@@ -114,8 +112,6 @@ class mEnOceanF_EEP_A53808_7 extends IPSModule{
 
     public function ShutterMoveUp(){
         $data = json_decode($this->ReadPropertyString("BaseData"));
-        $data->Device = 165; //Telegram Type Universal Teach In
-        $data->DataLength = 4; // Länge 7Byte
         $data->DataByte0 = 07; 
         $data->DataByte1 = 00; 
         $data->DataByte2 = 00; 

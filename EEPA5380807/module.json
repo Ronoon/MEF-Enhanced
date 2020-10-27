@@ -1,12 +1,12 @@
 {
 	"id": "{25C79D60-FFA5-2643-FC9D-968A60A80208}",
-	"name": "mEnOceanF_EEP_A53808_72",
+	"name": "mEnOceanF_EEP_A53808_1",
 	"type": 3,
 	"vendor": "More Enocean Features",
 	"aliases": 
 	[
-		"EEP A5-38-08-72",
-		"A5-38-08 Blinds"
+		"EEP A5-38-08-1",
+		"A5-38-08 Shutter"
 	],
 	"parentRequirements": ["{70E3075F-A35D-4DEB-AC20-C929A156FE48}"],
 	"childRequirements": [],
